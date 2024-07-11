@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+$ColorOne: #160440;
+$ColorTwo: #08C952;
+$Black: #252729;
+$White: #F2F2F2;
+
+:root {
+    --ColorOne: #{$ColorOne};
+    --ColorTwo: #{$ColorTwo};
+    --Black: #{$Black};
+    --White: #{$White};
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./img/wallpaperOne.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+    @media screen and (max-width: 400px) {
+        background-image: url(./img/wallpaperTwo.jpeg);
+    }
+}
