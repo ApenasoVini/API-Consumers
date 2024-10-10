@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "APIs Hub",
   description: "Site com várias APIs",
-};
+}
 
 export default function RootLayout({
   children,
