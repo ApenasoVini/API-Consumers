@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "APIs Hub",
+  title: "API Hub",
   description: "Site com várias APIs",
 }
 
