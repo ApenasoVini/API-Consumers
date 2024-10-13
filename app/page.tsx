@@ -41,20 +41,19 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen w-full">
-      <header className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white shadow-2xl">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
-          <h1 className="text-3xl font-extrabold tracking-wider">API Hub</h1>
-          <ul className="flex space-x-8 text-lg">
-            <li>
-              <a href="#features" className="hover:text-indigo-400 transition duration-300">
-                Products
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-      <section className="relative h-screen overflow-hidden">
+      <div className="relative h-screen overflow-hidden">
+        <header className="bg-gradient-to-r z-20 from-gray-700 via-gray-900 to-black text-white shadow-2xl">
+          <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
+            <h1 className="text-3xl font-extrabold tracking-wider">API Hub</h1>
+            <ul className="flex space-x-8 text-lg">
+              <li>
+                <a href="#features" className="hover:text-indigo-400 transition duration-300">
+                  Products
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -70,7 +69,7 @@ export default function Home() {
               <h2 className="text-5xl font-bold text-white drop-shadow-lg sm:text-6xl">
                 {slide.title}
               </h2>
-              <p className="mt-4 text-lg bg-gradient-to-r from-gray-700 via-gray-900 to-black w-fit text-gray-100">{slide.description}</p>
+              <p className="mt-4 text-lg bg-gradient-to-r text-gray-100">{slide.description}</p>
               <a
                 href="#features"
                 className="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105"
@@ -95,7 +94,7 @@ export default function Home() {
         >
           &#8594;
         </button>
-      </section>
+      </div>
 
       <section id="features" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
