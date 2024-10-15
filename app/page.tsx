@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import { useState } from "react";
 import Card from "./components/card/card";
+import Footer from "./components/footer/footer";
 import gitfinder from "../public/gitfinder.jpg";
 import cartolafc from "../public/cartolafc.jpg";
 import paises from "../public/paises.jpg";
@@ -91,61 +91,16 @@ export default function Home() {
         </button>
       </div>
 
-      <section id="features" className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h3 className="text-4xl font-semibold text-gray-800 mb-6">
-            Acessar APIs
-          </h3>
-          <div className="grid grid-cols-3 gap-10">
-            <Card link="./gitfinder" img={gitfinder} />
-            <Card link="./cartolafc" img={cartolafc} />
-            <Card link="./paises" img={paises} />
-            <Card link="./nasa" img={nasa} />
-            <Card link="./pokemons" img={pokemons} />
-            <Card link="./viacep" img={viacep} />
-            <Card link="./rickandmorty" img={rickandmorty} />
-          </div>
-        </div>
+      <section id="features" className="p-20 bg-gray-100 grid grid-cols-3 gap-8">
+        <Card link="./gitfinder" img={gitfinder} nome="GitFinder" descricao="API usada para buscar perfis do GitHub" />
+        <Card link="./cartolafc" img={cartolafc} nome="Cartola FC" descricao="API contendo informações sobre o futebol brasileiro" />
+        <Card link="./paises" img={paises} nome="GitFinder" descricao="API contendo informações sobre todos os países do mundo" />
+        <Card link="./nasa" img={nasa} nome="GitFinder" descricao="API contendo informações geridas pela NASA" />
+        <Card link="./pokemons" img={pokemons} nome="GitFinder" descricao="API usada para buscar pokemons" />
+        <Card link="./viacep" img={viacep} nome="GitFinder" descricao="API usada para buscar uma localização através de um CEP" />
+        <Card link="./rickandmorty" img={rickandmorty} nome="GitFinder" descricao="API usada para buscar os personagens da série Rick and Morty" />
       </section>
-
-      <footer className="bg-gray-900 text-white px-4 py-20">
-        <div className="flex justify-between items-center">
-          <div className="text-center w-60">
-            <h3 className="text-3xl font-semibold text-gray-200">Sobre o projeto</h3>
-            <p className="mt-4 text-lg text-gray-400">
-              Esse projeto foi desenvolvido para a vizualização do uso de APIs públicas, estimulando seu uso e o aprendizado em geral.
-            </p>
-          </div>
-
-          <div className="flex justify-center space-x-8 mb-12">
-            <Image
-              alt="LinkedIn"
-              src="/linkedin.svg"
-              width={30}
-              height={30}
-              className="hover:text-indigo-400 transform hover:scale-110 transition"
-            />
-            <Image
-              alt="GitHub"
-              src="/github.svg"
-              width={30}
-              height={30}
-              className="hover:text-indigo-400 transform hover:scale-110 transition"
-            />
-            <Image
-              alt="Email"
-              src="/email.svg"
-              width={30}
-              height={30}
-              className="hover:text-indigo-400 transform hover:scale-110 transition"
-            />
-          </div>
-
-          <div className="text-center text-gray-500">
-            <p>&copy; 2024 Your Project Name. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
