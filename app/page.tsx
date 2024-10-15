@@ -2,6 +2,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import Card from "./components/card/card";
+import gitfinder from "../public/gitfinder.jpg";
+import cartolafc from "../public/cartolafc.jpg";
+import paises from "../public/paises.jpg";
+import nasa from "../public/nasa.jpg";
+import pokemons from "../public/pokemons.jpg";
+import viacep from "../public/viacep.jpg";
+import rickandmorty from "../public/rickandmorty.jpg";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -53,14 +60,14 @@ export default function Home() {
               backgroundAttachment: 'fixed',
             }}
           >
-            <div className="z-10 flex flex-col items-center bg-black bg-opacity-50 p-6 rounded-lg">
+            <div className="z-10 flex flex-col items-center bg-black bg-opacity-70 p-6 rounded-lg">
               <h2 className="text-5xl font-bold text-white drop-shadow-lg sm:text-6xl">
                 {slide.title}
               </h2>
               <p className="mt-4 text-lg text-white">{slide.description}</p>
               <a
                 href="#features"
-                className="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105"
+                className="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform"
               >
                 Ver APIs
               </a>
@@ -87,12 +94,16 @@ export default function Home() {
       <section id="features" className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h3 className="text-4xl font-semibold text-gray-800 mb-6">
-            Our Products
+            Acessar APIs
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <Card />
-            <Card />
-            <Card />
+          <div className="grid grid-cols-3 gap-10">
+            <Card link="./gitfinder" img={gitfinder} />
+            <Card link="./cartolafc" img={cartolafc} />
+            <Card link="./paises" img={paises} />
+            <Card link="./nasa" img={nasa} />
+            <Card link="./pokemons" img={pokemons} />
+            <Card link="./viacep" img={viacep} />
+            <Card link="./rickandmorty" img={rickandmorty} />
           </div>
         </div>
       </section>
