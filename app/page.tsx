@@ -94,11 +94,11 @@ export default function Home() {
       <section id="features" className="p-20 bg-gray-100 grid grid-cols-3 gap-8">
         <Card link="./gitfinder" img={gitfinder} nome="GitFinder" descricao="API usada para buscar perfis do GitHub" />
         <Card link="./cartolafc" img={cartolafc} nome="Cartola FC" descricao="API contendo informações sobre o futebol brasileiro" />
-        <Card link="./paises" img={paises} nome="GitFinder" descricao="API contendo informações sobre todos os países do mundo" />
-        <Card link="./nasa" img={nasa} nome="GitFinder" descricao="API contendo informações geridas pela NASA" />
-        <Card link="./pokemons" img={pokemons} nome="GitFinder" descricao="API usada para buscar pokemons" />
-        <Card link="./viacep" img={viacep} nome="GitFinder" descricao="API usada para buscar uma localização através de um CEP" />
-        <Card link="./rickandmorty" img={rickandmorty} nome="GitFinder" descricao="API usada para buscar os personagens da série Rick and Morty" />
+        <Card link="./paises" img={paises} nome="Países" descricao="API contendo informações sobre todos os países do mundo" />
+        <Card link="./nasa" img={nasa} nome="Nasa" descricao="API contendo informações geridas pela NASA" />
+        <Card link="./pokemons" img={pokemons} nome="Pokemons" descricao="API usada para buscar pokemons" />
+        <Card link="./viacep" img={viacep} nome="ViaCEP" descricao="API usada para buscar uma localização através de um CEP" />
+        <Card link="./rickandmorty" img={rickandmorty} nome="Rick and Morty" descricao="API usada para buscar os personagens da série Rick and Morty" />
       </section>
       <Footer />
     </div>
