@@ -62,7 +62,7 @@ export default function Home() {
             aria-hidden={index !== currentSlide}
           >
             <div className="z-10 flex flex-col items-center bg-black bg-opacity-70 p-6 rounded-lg">
-              <h2 className="text-3xl sm:text-5xl font-bold text-white drop-shadow-lg sm:text-6xl">
+              <h2 className="text-3xl sm:text-5xl font-bold text-white drop-shadow-lg">
                 {slide.title}
               </h2>
               <p className="mt-4 text-base sm:text-lg text-white text-center px-4">
