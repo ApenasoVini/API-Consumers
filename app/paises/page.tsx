@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
+import Footer from '@/components/footer/footer';
 
 interface Country {
   name: {
@@ -45,28 +46,27 @@ export default function Page() {
   };
 
   return (
-    <div className="bg-gray-100 p-8 min-h-screen w-full">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h1 className="text-3xl font-bold text-center">Country Search</h1>
+    <>
+      <div className="min-h-screen p-6 gap-4 flex flex-col justify-center items-center bg-gray-800">
+        <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
           <div className="flex flex-wrap justify-center gap-4">
             <input
               value={searchName}
               onChange={(e) => setSearchName(e.target.value)}
               type="text"
-              placeholder="Filter by name"
-              className="w-64 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              placeholder="Escreva o nome do país"
+              className="p-2 border border-gray-700 rounded-lg focus:outline-none bg-gray-700 text-white"
             />
             <select
               value={searchRegion}
               onChange={(e) => setSearchRegion(e.target.value)}
-              className="w-64 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              className="p-3 border border-gray-700 rounded-lg focus:outline-none bg-blue-600 text-white"
             >
-              <option value="">All Regions</option>
-              <option value="Africa">Africa</option>
-              <option value="Americas">Americas</option>
-              <option value="Asia">Asia</option>
-              <option value="Europe">Europe</option>
+              <option value="">Sem filtro</option>
+              <option value="Africa">África</option>
+              <option value="Americas">América</option>
+              <option value="Asia">Ásia</option>
+              <option value="Europe">Europa</option>
               <option value="Oceania">Oceania</option>
             </select>
           </div>
@@ -74,19 +74,20 @@ export default function Page() {
 
         <ul className="grid grid-cols-4 gap-8">
           {data.map((country, index) => (
-            <li key={index} className="bg-white p-6 text-center rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
-              <div className="flex flex-col items-center">
+            <li key={index} className="bg-gray-900 p-6 text-center rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+              <div className="flex gap-1 flex-col items-center">
                 <div className="text-4xl">{country.flag}</div>
-                <h1 className="text-xl font-bold">{country.name.common}</h1>
-                <h2 className="text-sm text-gray-500">{country.name.official}</h2>
-                <p className="text-gray-600"><strong>Capital:</strong> {country.capital ? country.capital[0] : 'N/A'}</p>
-                <p className="text-gray-600"><strong>Region:</strong> {country.region}</p>
-                <p className="text-gray-600"><strong>UN Member:</strong> {country.unMember ? 'Yes' : 'No'}</p>
+                <h1 className="text-xl text-white font-bold">{country.name.common}</h1>
+                <h2 className="text-sm text-white">{country.name.official}</h2>
+                <p className="text-slate-400"><strong>Capital:</strong> {country.capital ? country.capital[0] : 'N/A'}</p>
+                <p className="text-slate-400"><strong>Region:</strong> {country.region}</p>
+                <p className="text-slate-400"><strong>UN Member:</strong> {country.unMember ? 'Yes' : 'No'}</p>
               </div>
             </li>
           ))}
         </ul>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
