@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Card from "./components/card/card";
-import Footer from "./components/footer/footer";
+import Card from "../components/card/card";
+import Footer from "../components/footer/footer";
 import gitfinder from "../public/gitfinder.jpg";
 import cartolafc from "../public/cartolafc.jpg";
 import paises from "../public/paises.jpg";
