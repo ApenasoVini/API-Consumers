@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Card from "../components/card/card";
 import Footer from "../components/footer/footer";
 import gitfinder from "../public/gitfinder.jpg";
@@ -32,19 +32,19 @@ export default function Home() {
     }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setTimeout(() => setIsAnimating(false), 1000);
-  };
+    setTimeout(() => setIsAnimating(false), 500);
+  }, [isAnimating, slides.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (isAnimating) return;
     setIsAnimating(true);
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setTimeout(() => setIsAnimating(false), 1000);
-  };
+    setTimeout(() => setIsAnimating(false), 500);
+  }, [isAnimating, slides.length]);
 
   return (
     <div className="bg-gray-50 min-h-screen w-full">
@@ -59,15 +59,18 @@ export default function Home() {
               backgroundPosition: 'center',
               backgroundAttachment: 'fixed',
             }}
+            aria-hidden={index !== currentSlide}
           >
             <div className="z-10 flex flex-col items-center bg-black bg-opacity-70 p-6 rounded-lg">
-              <h2 className="text-5xl font-bold text-white drop-shadow-lg sm:text-6xl">
+              <h2 className="text-3xl sm:text-5xl font-bold text-white drop-shadow-lg sm:text-6xl">
                 {slide.title}
               </h2>
-              <p className="mt-4 text-lg text-white">{slide.description}</p>
+              <p className="mt-4 text-base sm:text-lg text-white text-center px-4">
+                {slide.description}
+              </p>
               <a
                 href="#features"
-                className="mt-8 inline-block bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform"
+                className="mt-8 inline-block bg-indigo-600 text-white px-4 sm:px-6 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform"
               >
                 Ver APIs
               </a>
@@ -91,7 +94,7 @@ export default function Home() {
         </button>
       </div>
 
-      <section id="features" className="p-20 bg-gray-100 grid grid-cols-3 gap-8">
+      <section id="features" className="p-6 sm:p-20 bg-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <Card link="./gitfinder" img={gitfinder} nome="GitFinder" descricao="API usada para buscar perfis do GitHub" />
         <Card link="./cartolafc" img={cartolafc} nome="Cartola FC" descricao="API contendo informações sobre o futebol brasileiro" />
         <Card link="./paises" img={paises} nome="Países" descricao="API contendo informações sobre todos os países do mundo" />
