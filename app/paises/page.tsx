@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Footer from '@/components/footer/footer';
+import Image from 'next/image';
 
 interface Country {
   name: {
@@ -9,7 +10,10 @@ interface Country {
   };
   capital?: string[];
   region: string;
-  flag: string;
+  flags: {
+    png: string;
+    alt: string;
+  };
   unMember: boolean;
 }
 
@@ -47,7 +51,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="min-h-screen p-6 gap-4 flex flex-col justify-center items-center bg-gray-800">
+      <div className="min-h-screen p-6 gap-4 flex flex-col justify-start items-center bg-gray-800">
         <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
           <div className="flex flex-wrap justify-center gap-4">
             <input
@@ -76,12 +80,12 @@ export default function Page() {
           {data.map((country, index) => (
             <li key={index} className="bg-gray-900 p-6 text-center rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
               <div className="flex gap-1 flex-col items-center">
-                <div className="text-4xl">{country.flag}</div>
+                <Image src={country.flags.png} alt={country.flags.alt || `Bandeira de ${country.name.common}`} width={50} height={50} />
                 <h1 className="text-xl text-white font-bold">{country.name.common}</h1>
                 <h2 className="text-sm text-white">{country.name.official}</h2>
                 <p className="text-slate-400"><strong>Capital:</strong> {country.capital ? country.capital[0] : 'N/A'}</p>
-                <p className="text-slate-400"><strong>Region:</strong> {country.region}</p>
-                <p className="text-slate-400"><strong>UN Member:</strong> {country.unMember ? 'Yes' : 'No'}</p>
+                <p className="text-slate-400"><strong>Região:</strong> {country.region}</p>
+                <p className="text-slate-400"><strong>Membro da ONU:</strong> {country.unMember ? 'Sim' : 'Não'}</p>
               </div>
             </li>
           ))}

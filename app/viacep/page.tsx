@@ -32,7 +32,7 @@ export default function Page() {
         <div className="bg-gray-900 p-6 flex flex-col gap-2 rounded-lg shadow-2xl">
           <div className="flex items-center justify-center gap-2">
             <input
-              className="p-2 border border-gray-700 rounded-l-lg focus:outline-none bg-gray-700 text-white"
+              className="p-2 border border-gray-700 rounded-l-lg w-max focus:outline-none bg-gray-700 text-white"
               type="text"
               placeholder="Digite o CEP (Apenas números)"
               value={cep}
