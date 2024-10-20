@@ -17,7 +17,7 @@ export default function Home() {
   const slides = [
     {
       image: "/parallax1.jpg",
-      title: "Bem vindo(a) à API Hub",
+      title: "Bem vindo(a) ao API Hub",
       description: "Observe o funcionamento de diversas APIs!"
     },
     {
@@ -69,10 +69,10 @@ export default function Home() {
                 {slide.description}
               </p>
               <a
-                href="#features"
+                href="#apis"
                 className="mt-8 inline-block bg-indigo-600 text-white px-4 sm:px-6 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition-transform transform"
               >
-                Ver APIs
+                Explorar
               </a>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
         </button>
       </div>
 
-      <section id="features" className="p-6 sm:p-20 bg-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <section id="apis" className="p-6 sm:p-20 bg-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         <Card link="./gitfinder" img={gitfinder} nome="GitFinder" descricao="API usada para buscar perfis do GitHub" />
         <Card link="./cartolafc" img={cartolafc} nome="Cartola FC" descricao="API contendo informações sobre o futebol brasileiro" />
         <Card link="./paises" img={paises} nome="Países" descricao="API contendo informações sobre todos os países do mundo" />
