@@ -2,17 +2,35 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
+
+interface PokemonType {
+  type: {
+    name: string;
+  };
+}
+
+interface Pokemon {
+  id: number;
+  name: string;
+  weight: number;
+  stats: { base_stat: number }[];
+  types: PokemonType[];
+  sprites: {
+    front_default: string;
+  };
+}
 
 export default function PokemonCard() {
   const [id, setId] = useState(1);
-  const [pokemon, setPokemon] = useState<any>(null);
+  const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [carregando, setCarregando] = useState(true);
 
   const fetchData = async () => {
     setCarregando(true);
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-      const data = await response.json();
+      const data: Pokemon = await response.json();
       setPokemon(data);
     } catch (error) {
       console.error(`Erro: ${error}`);
@@ -27,6 +45,7 @@ export default function PokemonCard() {
 
   return (
     <>
+      <Header />
       {carregando ? (
         <div className="h-screen p-6 flex justify-center items-center bg-gray-800">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-blue-500"></div>
@@ -38,7 +57,7 @@ export default function PokemonCard() {
               <nav className="flex justify-between pb-4">
                 <span className="text-xl font-bold">#{pokemon.id}</span>
                 <ul className="flex gap-2">
-                  {pokemon.types.map((type: any, index: number) => (
+                  {pokemon.types.map((type: PokemonType, index: number) => (
                     <li key={index} className="bg-blue-600 px-2 py-1 rounded-md text-sm">
                       {type.type.name}
                     </li>

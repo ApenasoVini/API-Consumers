@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from '@/components/header/header';
 import Footer from "../../components/footer/footer";
 import Repo from "../../public/gitfinder/repo.svg";
 import Flwing from "../../public/gitfinder/flwing.svg";
@@ -43,6 +44,7 @@ export default function Page() {
 
   return (
     <>
+      <Header />
       <div className="h-screen p-6 flex justify-center items-start bg-gray-800">
         <div className="bg-gray-900 p-6 flex flex-col gap-2 rounded-lg shadow-2xl">
           <div className="flex items-center gap-2 justify-center">
@@ -64,7 +66,7 @@ export default function Page() {
           {erro && <p className="text-red-500 text-center font-semibold">{erro}</p>}
 
           {usuario && (
-            <div className="bg-gray-800 gap-1 flex flex-col p-6 rounded-lg text-white text-center">
+            <div className="bg-gray-800 gap-1 flex flex-col p-6 rounded-lg text-white items-center">
               <Image
                 className="rounded-full w-24 h-24 mx-auto border-4 border-gray-700"
                 src={usuario.avatar_url}
@@ -73,15 +75,15 @@ export default function Page() {
                 height={96}
               />
               <p className="font-bold text-xl">{usuario.login}</p>
-              <div className="text-gray-400 gap-2 flex justify-center items-center">
+              <div className="text-gray-400 gap-2 flex justify-start items-center">
                 <Image src={Flwers} width={25} height={25} alt='' />
                 <p>Seguidores: {usuario.followers}</p>
               </div>
-              <div className="text-gray-400 gap-2 flex justify-center items-center">
+              <div className="text-gray-400 gap-2 flex justify-start items-center">
                 <Image src={Flwing} width={25} height={25} alt='' />
                 <p>Seguindo: {usuario.following}</p>
               </div>
-              <div className="text-gray-400 gap-2 flex justify-center items-center">
+              <div className="text-gray-400 gap-2 flex justify-start items-center">
                 <Image src={Repo} width={25} height={25} alt='' />
                 <p>Repositórios: {usuario.public_repos}</p>
               </div>

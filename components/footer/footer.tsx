@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
@@ -12,33 +13,42 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-center md:justify-end space-x-8 mt-8 md:mt-0 md:w-1/3">
-          <Image
-            alt="LinkedIn"
-            src="/linkedin.svg"
-            width={30}
-            height={30}
-            className="hover:scale-105 hover:cursor-pointer transition"
-          />
-          <Image
-            alt="GitHub"
-            src="/github.svg"
-            width={30}
-            height={30}
-            className="hover:scale-105 hover:cursor-pointer transition"
-          />
-          <Image
-            alt="Email"
-            src="/email.svg"
-            width={30}
-            height={30}
-            className="hover:scale-105 hover:cursor-pointer transition"
-          />
+          <Link href='https://www.linkedin.com/in/apenasovini/' target="_blank">
+            <Image
+              alt="LinkedIn"
+              src="/linkedin.svg"
+              width={30}
+              height={30}
+              className="hover:scale-105 hover:cursor-pointer transition"
+            />
+          </Link>
+
+          <Link href='https://github.com/ApenasoVini' target="_blank">
+            <Image
+              alt="GitHub"
+              src="/github.svg"
+              width={30}
+              height={30}
+              className="hover:scale-105 hover:cursor-pointer transition"
+            />
+          </Link>
+
+          <Link href='mailto:viniciusicmsc@gmail.com' target="_blank">
+            <Image
+              alt="Email"
+              src="/email.svg"
+              width={30}
+              height={30}
+              className="hover:scale-105 hover:cursor-pointer transition"
+            />
+          </Link>
         </div>
       </div>
 
       <div className="text-center mt-4 text-gray-500 w-full">
         <p>&copy; 2024 API Hub. Todos os direitos reservados.</p>
       </div>
+
     </footer>
   );
 }

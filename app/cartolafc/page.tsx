@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
 
 interface Time {
   nome: string;
@@ -64,11 +65,12 @@ export default function Page() {
 
   return (
     <>
+      <Header />
       <div className="min-h-screen p-6 flex gap-4 flex-col items-center bg-gray-800">
         <div className="bg-gray-900 p-6 flex flex-col gap-2 rounded-lg shadow-2xl">
           <div className="flex items-center justify-center gap-2">
             <input
-              className="p-2 border border-gray-700 rounded-l-lg focus:outline-none bg-gray-700 text-white"
+              className="p-2 border border-gray-700 rounded-lg focus:outline-none bg-gray-700 text-white"
               type="text"
               placeholder="Digite o nome do time"
               value={searchTerm}

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Footer from '@/components/footer/footer';
+import Header from '@/components/header/header';
 import Image from 'next/image';
 
 interface Country {
@@ -51,6 +52,7 @@ export default function Page() {
 
   return (
     <>
+      <Header />
       <div className="min-h-screen p-6 gap-4 flex flex-col justify-start items-center bg-gray-800">
         <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
           <div className="flex flex-wrap justify-center gap-4">

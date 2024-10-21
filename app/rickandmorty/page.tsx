@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Footer from "../../components/footer/footer";
+import Header from "@/components/header/header";
 
 interface Character {
   id: number;
@@ -43,6 +44,7 @@ export default function Page() {
 
   return (
     <>
+    <Header />
       <div className="h-screen p-6 flex justify-center items-start bg-gray-800">
         <div className="bg-gray-900 p-6 flex flex-col gap-4 rounded-lg shadow-2xl w-full md:max-w-md">
           <input
